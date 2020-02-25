@@ -233,5 +233,6 @@ return 1;
 break;
 
 default: outOther();
+break;
 }
 }
