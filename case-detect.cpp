@@ -1,12 +1,13 @@
 #include <iostream>
-//#include <string>
+#include <array>
+#include <cstring>
 using namespace std;
 
 //constexpr unsigned int hash(const char *s, int off = 0);
 void lowOut();
 void outOther();
 void upOut();
-int sBlock(char* input);
+int sBlock(char input);
 
 
 
@@ -14,37 +15,37 @@ int main(int num, char** args)
 {
   //  int check = (int)_strlen(*args);
 
-char* input = args[2];
+if(num != 2)
+{
+cout << "Input exactly one parameter" << endl;
+return 0;
+}
+if(strlen(args[1]) > 1 )
+{
+outOther();
+return 0;
+}
+
+char input = *args[1];
 //cout << (int)_strlen(*args) << endl;
 //cout << input << endl;
 //cout << args[2] << endl;
+//cout << sizeof(*args[1] + 1) << endl;
+//cout << args[2] << endl;
 //if(strlen(args) > 3)
+//cout << sizeof(input) << endl;
 
 
-//try
+//if(sizeof(*args[1] + 1) > 2)
 {
-    
-
-//if(*args[3] == '\0')
-{
-
-  
-   //outOther();
-}
-//else
-{
-
+// outOther();
+ //return 0;
 }
 
-}
-//catch (...)
-{
- 
 return sBlock(input);
-}
 
   //  outOther();
-    return 0;
+    
 }
 
 
@@ -70,9 +71,9 @@ cout << "Please only input letters for this program." << endl;
 //}   
 
 
-int sBlock(char* input)
+int sBlock(char input)
 {
-    switch(*input)
+    switch(input)
 {
 case 'a': lowOut();
 return -1;
